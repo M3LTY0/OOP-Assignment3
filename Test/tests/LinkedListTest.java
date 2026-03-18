@@ -291,7 +291,7 @@ class LinkedListTest {
 		this.linkedList.append("c");
 		this.linkedList.append("d");
 
-		this.linkedList.delete(4);
+		this.linkedList.delete(3);
 
 		assertFalse(this.linkedList.isEmpty());
 
@@ -304,5 +304,47 @@ class LinkedListTest {
 		assertEquals("c", this.linkedList.retrieve(2));
 	}
 
+	@Test
+	void testContains() {
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
 
+		assertFalse(this.linkedList.isEmpty());
+		
+		assertEquals(4, this.linkedList.size());
+
+		assertEquals("a", this.linkedList.retrieve(0));
+
+		assertEquals("b", this.linkedList.retrieve(1));
+		
+		assertEquals("c", this.linkedList.retrieve(2));
+		
+		assertEquals("d", this.linkedList.retrieve(3));
+
+		assertTrue(this.linkedList.contains("b"));
+	}
+
+	@Test
+	void testIndexOf() {
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
+
+		assertFalse(this.linkedList.isEmpty());
+		
+		assertEquals(4, this.linkedList.size());
+
+		assertEquals("a", this.linkedList.retrieve(0));
+
+		assertEquals("b", this.linkedList.retrieve(1));
+		
+		assertEquals("c", this.linkedList.retrieve(2));
+		
+		assertEquals("d", this.linkedList.retrieve(3));
+
+		assertEquals(2, this.linkedList.indexOf("c"));
+	}
 }
