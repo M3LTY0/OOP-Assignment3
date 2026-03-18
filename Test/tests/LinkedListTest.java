@@ -247,68 +247,32 @@ class LinkedListTest {
 		assertEquals("d", this.linkedList.retrieve(2));
 	}
 
+	// Tests clearing the linked list
 	@Test
-	void testInsertObject() {
+	void testClearList() {
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
 
-	}
-
-	@Test
-	void testPrependObject() {
-
-	}
-
-	@Test
-	void testAppendObject() {
+		assertFalse(this.linkedList.isEmpty());
 		
-	}
+		assertEquals(4, this.linkedList.size());
 
-	@Test
-	void testReplaceObject() {
+		assertEquals("a", this.linkedList.retrieve(0));
 
-	}
-
-	@Test
-	void testFindObject() {
-
-	}
-
-	@Test
-	void testDeleteObject() {
-
-	}
-
-	@Test
-	void testUser() {
+		assertEquals("b", this.linkedList.retrieve(1));
 		
-	}
+		assertEquals("c", this.linkedList.retrieve(2));
+		
+		assertEquals("d", this.linkedList.retrieve(3));
 
-	@Test
-	void testInsertUser() {
+		this.linkedList.clear();
 
-	}
+		assertTrue(this.linkedList.isEmpty());
 
-	@Test
-	void testPrependUser() {
+		assertEquals(0, this.linkedList.size());
 
-	}
-
-	@Test
-	void testAppendUser() {
-
-	}
-
-	@Test
-	void testReplaceUser() {
-
-	}
-
-	@Test
-	void testFindUser() {
-
-	}
-
-	@Test
-	void testDeleteUser() {
 
 	}
 }
