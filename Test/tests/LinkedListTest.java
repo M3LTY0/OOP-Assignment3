@@ -255,24 +255,54 @@ class LinkedListTest {
 		this.linkedList.append("c");
 		this.linkedList.append("d");
 
-		assertFalse(this.linkedList.isEmpty());
-		
-		assertEquals(4, this.linkedList.size());
-
-		assertEquals("a", this.linkedList.retrieve(0));
-
-		assertEquals("b", this.linkedList.retrieve(1));
-		
-		assertEquals("c", this.linkedList.retrieve(2));
-		
-		assertEquals("d", this.linkedList.retrieve(3));
-
 		this.linkedList.clear();
 
 		assertTrue(this.linkedList.isEmpty());
 
 		assertEquals(0, this.linkedList.size());
-
-
 	}
+
+	// Tests removing the first node in the linked list
+	@Test
+	void testRemoveFirst() {
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
+
+		this.linkedList.delete(0);
+
+		assertFalse(this.linkedList.isEmpty());
+
+		assertEquals(3, this.linkedList.size());
+
+		assertEquals("b", this.linkedList.retrieve(0));
+		
+		assertEquals("c", this.linkedList.retrieve(1));
+		
+		assertEquals("d", this.linkedList.retrieve(2));
+	}
+
+	// Tests removing the last node in the linked list
+	@Test
+	void testRemoveLast() {
+		this.linkedList.append("a");
+		this.linkedList.append("b");
+		this.linkedList.append("c");
+		this.linkedList.append("d");
+
+		this.linkedList.delete(4);
+
+		assertFalse(this.linkedList.isEmpty());
+
+		assertEquals(3, this.linkedList.size());
+		
+		assertEquals("a", this.linkedList.retrieve(0));
+		
+		assertEquals("b", this.linkedList.retrieve(1));
+		
+		assertEquals("c", this.linkedList.retrieve(2));
+	}
+
+
 }
