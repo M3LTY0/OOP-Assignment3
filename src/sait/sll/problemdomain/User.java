@@ -1,11 +1,13 @@
 package sait.sll.problemdomain;
 
+import java.io.Serializable;
+
 /**
  * Represents a user.
  * @version 2025
  *
  */
-public class User {
+public class User implements Serializable {
 	
 	private int id;
 	
